@@ -4,7 +4,7 @@ CREATE TABLE Vehicles (
   RegNum varchar(15) NOT NULL PRIMARY KEY,
   ParkingSpotID int NOT NULL,
   VehicleInfoID int NOT NULL,
-  ArrivalTime date,
+  ArrivalTime datetime,
   FOREIGN KEY (ParkingSpotID)
   REFERENCES Parkinglot(ParkingSpotID),
   FOREIGN KEY (VehicleInfoID)
