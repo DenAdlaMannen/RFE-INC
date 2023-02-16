@@ -1,3 +1,7 @@
+<?php
+include_once "classes/Connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +24,25 @@
   <a href="search.php" class="btn">SEARCH VEHICLE</a>
   <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
 </div>
+
+<?php
+$conn = Connection::connection();
+
+if($conn->connect_error) {
+  die("Connection failed.");
+}
+else {
+  echo "WOHO!";
+}
+
+$conn->close();
+
+
+
+?>
+
   </div>
+
 
   
 </body>
