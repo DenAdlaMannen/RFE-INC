@@ -38,3 +38,16 @@ INSERT INTO parkinglot (ParkingSpotID) VALUES (7);
 INSERT INTO parkinglot (ParkingSpotID) VALUES (8);
 INSERT INTO parkinglot (ParkingSpotID) VALUES (9);
 INSERT INTO parkinglot (ParkingSpotID) VALUES (10);
+
+//INITIATE VEHICLEINFO TABLE
+INSERT INTO vehicleinfo (vehicleinfoID, cost, vehicletype)
+VALUES (2, 80, 'CAR');
+
+INSERT INTO vehicleinfo (vehicleinfoID, cost, vehicletype)
+VALUES (1, 40, 'MC');
+
+INSERT INTO vehicles (RegNum, vehicleinfoID, parkingspotID, ArrivalTime)
+VALUES ('abc123', 2, 1, CURRENT_TIMESTAMP()); 
+
+INSERT INTO vehicles (RegNum, vehicleinfoID, parkingspotID, ArrivalTime)
+VALUES ('abc124', 1, 2, CURRENT_TIMESTAMP()); 
