@@ -1,0 +1,27 @@
+//CREATE VEHICLES TABLE
+
+CREATE TABLE Vehicles (
+  RegNum varchar(15) NOT NULL PRIMARY KEY,
+  ParkingSpotID int NOT NULL,
+  VehicleInfoID int NOT NULL,
+  ArrivalTime date,
+  FOREIGN KEY (ParkingSpotID)
+  REFERENCES Parkinglot(ParkingSpotID),
+  FOREIGN KEY (VehicleInfoID)
+  REFERENCES VehicleInfo(VehicleInfoID)
+);
+
+
+//CREATE PARKINGLOT TABLE
+
+CREATE TABLE Parkinglot (
+ParkingSpotID int NOT NULL PRIMARY KEY
+);
+
+//CREATE VEHICLESINFO TABLE
+
+CREATE TABLE VehicleInfo (
+  VehicleInfoID int NOT NULL PRIMARY KEY,
+  VehicleType varchar(15),
+  Cost int NOT NULL
+);
