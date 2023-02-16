@@ -1,0 +1,42 @@
+*{
+margin: 0px;
+}
+
+
+/* CREATING THE STRUCTURE OF THE WEBSITE. STRUCTURED WITH GRID
+   CONTAINER CONTAINS 2 SUB DIVS, HEADER AND MAIN 
+ */
+.container{
+  height: 100vh;
+  width: 100%;
+  background-color: red;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10em 50em;
+  grid-template-areas: 
+  "header"
+  "main"
+  ;
+}
+
+.header{
+  display: grid;
+  grid-area: header;
+  background-color: blue;
+}
+
+.main{
+  display: grid;
+  grid-area: main;
+  background-color: rgb(17, 255, 0);
+}
+
+/* END OF STRUCTURE */
+
+/* SOME STYLING */
+
+.headerTxt{
+justify-self: center;
+align-self: center;
+}
