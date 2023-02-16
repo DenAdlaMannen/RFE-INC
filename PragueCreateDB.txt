@@ -25,3 +25,16 @@ CREATE TABLE VehicleInfo (
   VehicleType varchar(15),
   Cost int NOT NULL
 );
+
+
+//FILL PARKINGLOT
+INSERT INTO parkinglot (ParkingSpotID) VALUES (1);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (2);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (3);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (4);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (5);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (6);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (7);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (8);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (9);
+INSERT INTO parkinglot (ParkingSpotID) VALUES (10);
