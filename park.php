@@ -1,5 +1,6 @@
 <?php
 include_once "classes/Connection.php";
+include_once "classes/park-class.php";
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +27,7 @@ include_once "classes/Connection.php";
 </div>
 
 <?php
+
 ?>
 
   </div>
