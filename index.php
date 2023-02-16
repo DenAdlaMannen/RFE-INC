@@ -15,10 +15,10 @@
 </div>
  
 <div class="main">
-  <a href="" class="btn">PARK VEHICLE</a>
-  <a href="" class="btn">REMOVE VEHICLE</a>
-  <a href="" class="btn">SEARCH VEHICLE</a>
-  <a href="" class="btn">VIEW ALL VEHICLES</a>
+  <a href="park.php" class="btn">PARK VEHICLE</a>
+  <a href="remove.php" class="btn">REMOVE VEHICLE</a>
+  <a href="search.php" class="btn">SEARCH VEHICLE</a>
+  <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
 </div>
   </div>
 
