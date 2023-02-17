@@ -31,9 +31,9 @@ include_once "classes/park-class.php";
     <h3 class="formHeader">Enter vehicle information</h3>
     <div class="form">
     <form method="POST" action="classes/park-class.php">
-      <label>Registration number: </label><input type="Text" name="regNum" placeholder="Registration Number">
+      <label class="labelTxt">Registration number: </label><input type="Text" name="regNum" placeholder="Registration Number" class="field">
       <br>
-      <label>Type:</label>
+      <label class="labelTxt">Type:</label>
       <input type="Radio" name="type" value="MC"> MC
       <input type="Radio" name="type" value="CAR"> CAR
     </form>
