@@ -1,6 +1,7 @@
 <?php
 include_once "classes/Connection.php";
-$conn = Connection::connection();
+include_once "classes/search-class.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -16,31 +17,25 @@ $conn = Connection::connection();
   <div class="container">
   <div class="header">  
     <h1 class="headerTxt">PARK IN PRAGUE</h1>
-</div>
- 
+</div> 
+
 <div class="main">
 <a href="index.php" class="btn">HOME</a>
   <a href="park.php" class="btn">PARK VEHICLE</a>
   <a href="remove.php" class="btn">REMOVE VEHICLE</a>  
   <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
-  <form method="post">
+  <form method="post" action="">
   <label for="RegNum">Insert registration number:</label><br>
   <input type="text" name="RegNum" ><br><br>
   <input type="submit" value="Submit"></form>
+  
+  <?php 
+  if (isset($_POST['submit'])){  
+  searchvehicles(); 
+  }
+  ?>
+
 </div>
 </div>  
 </body>
 </html>
-
-<?php
-$submit = $_POST['RegNum'];
-$sql = "SELECT RegNum FROM vehicles WHERE RegNum = $submit";
-$result = $conn->query($sql);
-
-foreach ($result as $key) {
-  echo $key['RegNum'];
-}
-
-
-$conn->close();
-?>
