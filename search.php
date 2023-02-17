@@ -27,7 +27,7 @@ include_once "classes/search-class.php";
   <form method="post" action="">
   <label for="RegNum">Insert registration number:</label><br>
   <input type="text" name="RegNum" ><br><br>
-  <input type="submit" value="Submit"></form>
+  <input type="submit" name="submit" value="Submit"></form>
   
   <?php 
   if (isset($_POST['submit'])){  
