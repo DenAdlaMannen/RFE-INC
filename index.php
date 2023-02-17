@@ -19,10 +19,12 @@ include_once "classes/Connection.php";
 </div>
  
 <div class="main">
+  <div class="menu">
   <a href="park.php" class="btn">PARK VEHICLE</a>
   <a href="remove.php" class="btn">REMOVE VEHICLE</a>
   <a href="search.php" class="btn">SEARCH VEHICLE</a>
   <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
+  </div>
 </div>
 
 <?php
