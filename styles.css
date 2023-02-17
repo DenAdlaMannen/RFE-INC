@@ -45,7 +45,7 @@ margin: 0px;
 
 /* END OF STRUCTURE */
 
-/* SOME STYLING */
+/* SOME GENERAL STYLING FOR ALL WEBSITES */
 
 .headerTxt{
 justify-self: center;
@@ -90,3 +90,31 @@ color: rgb(155, 214, 238);
 .btn:hover{
   background-color: #555555;
 }
+
+/* END OF GENERAL STYLING */
+
+/* PARK WEBSITE STYLES */
+.formContainer{
+  height: 40em;
+  width: 60em;
+  background-color: rgb(124, 134, 165);
+  justify-self: center;
+  display: grid;
+}
+
+.form{
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  margin-bottom: 10em;
+}
+
+.formHeader{
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 10em;
+  font-size: 45px;
+  color: white;
+  position: absolute;
+}
+/* END OF PARK WEBSITE STYLES */
