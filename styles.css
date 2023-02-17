@@ -117,4 +117,15 @@ color: rgb(155, 214, 238);
   color: white;
   position: absolute;
 }
+
+.field{
+  width: 10em;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+.labelTxt{
+  font-weight: 900;
+  font-size: 25px;
+}
 /* END OF PARK WEBSITE STYLES */
