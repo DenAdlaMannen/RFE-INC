@@ -162,7 +162,7 @@ if(isset($_POST["regNum"]) && isset($_POST["type"]))
       $query->execute();
       //header("Location: ../park.php");
       $parkedSuccessfully = true;
-      echo '<script>alert("The parkinglot is full.")</script>';
+      echo '<script>alert("Succsessfully parked vehicle.")</script>';
     }
     else{
       $parkedSuccessfully = false;
