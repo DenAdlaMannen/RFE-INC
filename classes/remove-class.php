@@ -2,9 +2,9 @@
 include_once 'vehicle-class.php';
 include_once 'Connection.php';
 
-$vehicleCost = 80;
-$arrivalTime = "2023-02-16 10:00:00";
-calculateCost($vehicleCost, $arrivalTime);
+//$vehicleCost = 80;
+// $arrivalTime = "2023-02-16 10:00:00";
+// calculateCost($vehicleCost, $arrivalTime);
 
 function getAllRegNums(){
 
@@ -25,7 +25,7 @@ function getAllRegNums(){
 
   return $result;
 }
-
+//körd
 function removeVehicle($regNum){
 
     //OPEN NEW CONNECTION
@@ -64,14 +64,14 @@ function getVehicle($regNum){
     return $calcVehicle;
 
 }
-
-function getCost($vehicletype){
+//körd
+function getCost($vehicleType){
 
    //OPEN NEW CONNECTION
   $functionConn = Connection::connection();
 
   //QUERY TO RUN
-  $query = "SELECT cost FROM vehicleinfo WHERE vehicleinfoID = $vehicletype";
+  $query = "SELECT cost FROM vehicleinfo WHERE vehicleinfoID = $vehicleType";
 
   //RUN THE QUERY
   $exec = $functionConn->query($query); 
@@ -80,7 +80,7 @@ function getCost($vehicletype){
   $vehicleCost = $temp['cost'];
   return $vehicleCost;
 }
-
+//körd
 function calculateCost($vehicleCost, $arrivalTime){
     $datetime1 = date_create($arrivalTime);
     $datetime2 = date_create();
@@ -96,8 +96,9 @@ function calculateCost($vehicleCost, $arrivalTime){
     }
     
     $totalCost = $vehicleCost * $diffInHours;
-
-    print_r($totalCost);
+    
+    return $totalCost;
 
 }
+//körd
 ?>

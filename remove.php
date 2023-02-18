@@ -1,6 +1,7 @@
 <?php
 include_once "classes/Connection.php";
 include_once 'classes/remove-class.php';
+include_once 'classes/vehicle-class.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -47,11 +48,29 @@ include_once 'classes/remove-class.php';
                         if (isset($_POST['TEST']))
                         {
 
+                            // GETS USER INPUT REGNUM TO REMOVE FROM THE LOT
                             $regNum = $_POST['Vehicle'];
-                            
+
+                            // INSTANCIATES A VEHICLE OBJECT BASED ON THE VEHICLE FROM THE DB
+                            $removeVehicle = getVehicle($regNum);
+
+                            // Extracts vehicletype from the object, 1 = MC 2 = CAR
+                            $vehicleType = $removeVehicle->vehicleInfo;
+
+                            //Extracts the arrivaltime from the object.
+                            $arrivalTime = $removeVehicle->arrivalTime;
+
+                            //GET THE CORRECT COST TARIFF FROM THE DB DEPENDING ON VTYPE
+                            $vehicleCost = getCost($vehicleType);
+
+                            // CALCULATES PRICE OF PARKING BY DIFF ARRIVALTIME AND A DATETIME NOW.
+                            $totalCost = calculateCost($vehicleCost, $arrivalTime);
+
+                    
                             //FUNKAR 
-                            echo'<br>';
-                            echo $_POST['Vehicle'];
+
+                            // echo'<br>';
+                            // echo $regNum;
 
 
 
