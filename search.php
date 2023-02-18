@@ -20,20 +20,29 @@ include_once "classes/search-class.php";
 </div> 
 
 <div class="main">
-<a href="index.php" class="btn">HOME</a>
+  <div class="menu">
+  <a href="index.php" class="btn">HOME</a>
   <a href="park.php" class="btn">PARK VEHICLE</a>
   <a href="remove.php" class="btn">REMOVE VEHICLE</a>  
   <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
-  <form method="post" action="">
-  <label for="RegNum">Insert registration number:</label><br>
-  <input type="text" name="RegNum" ><br><br>
-  <input type="submit" name="submit" value="Submit"></form>
+  </div>  
+  <div class="formContainer">
+    <h3 class="formHeader">Enter vehicle information</h3>
+    <div class="form">
+    <form method="POST" action="">
+      <label class="labelTxt" for="RegNum">Registration number: </label>
+      <input type="Text" name="RegNum" class="field">      
+      <input type="submit" name="submit" value="Submit" class="park">
+    </form>
+    <?php 
+    if (isset($_POST['submit'])){  
+    searchvehicles(); 
+    }
+    ?>
+  </div>
   
-  <?php 
-  if (isset($_POST['submit'])){  
-  searchvehicles(); 
-  }
-  ?>
+
+  
 
 </div>
 </div>  

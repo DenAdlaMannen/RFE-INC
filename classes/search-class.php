@@ -9,7 +9,7 @@ $functionconn = Connection::connection();
 //SETTING THE SEARCH UP
 $submit = $_POST['RegNum'];
 // IF EMPTY RETURN FAIL!
-if (empty($result)){
+if (empty($submit)){
     echo "That is not a valid registration number";
 }
 else{
