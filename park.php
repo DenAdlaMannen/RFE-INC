@@ -34,11 +34,17 @@ include_once "classes/park-class.php";
       <label class="labelTxt">Registration number: </label><input type="Text" name="regNum" placeholder="Registration Number" class="field">
       <br>
       <label class="labelTxt">Type:</label>
-      <input type="Radio" name="type" value="MC"> MC
-      <input type="Radio" name="type" value="CAR"> CAR
+      <input type="Radio" name="type" value="1"> MC
+      <input type="Radio" name="type" value="2"> CAR
+      <br>
+      <input type="submit" value="Park" class="park">
     </form>
     </div>
 
+
+    <?php
+
+    ?>
 
   </div>
 </div>
