@@ -11,6 +11,7 @@
 
 *{
 margin: 0px;
+
 }
 
 
@@ -127,5 +128,26 @@ color: rgb(155, 214, 238);
 .labelTxt{
   font-weight: 900;
   font-size: 25px;
+}
+
+.park{
+  margin-top: 1em;
+}
+
+.error{
+  display: grid;
+  margin-top: 5em;
+  height: 2em;
+  width: 30em;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid red;
+  border-radius: 7px;
+}
+
+.errorMsg{
+margin-left: 1em;
+align-self: center;
+font-weight: 900;
 }
 /* END OF PARK WEBSITE STYLES */

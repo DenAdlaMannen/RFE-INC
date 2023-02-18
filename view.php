@@ -19,12 +19,12 @@ include_once "classes/Connection.php";
 </div>
  
 <div class="main">
+<div class="menu">
   <a href="index.php" class="btn">HOME</a>
   <a href="park.php" class="btn">PARK VEHICLE</a>
   <a href="remove.php" class="btn">REMOVE VEHICLE</a>
   <a href="search.php" class="btn">SEARCH VEHICLE</a>
 </div>
-
 <?php
 $conn = Connection::connection();
 
@@ -67,6 +67,9 @@ $conn->close();
 
 
 ?>
+</div>
+
+
 
   </div>
 
