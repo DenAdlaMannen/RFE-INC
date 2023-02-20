@@ -44,6 +44,7 @@ $result = $conn->query($query);
 echo '<style>
 table, th, td {
     border: 1px solid black;
+    background-color: rgb(124, 134, 165, 0.5);
  }</style>
  <table>
 <tr>

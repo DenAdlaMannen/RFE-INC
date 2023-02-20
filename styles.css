@@ -25,7 +25,7 @@ margin: 0px;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10em 50em;
+  grid-template-rows: 20em 50em;
   grid-template-areas: 
   "header"
   "main"
@@ -35,13 +35,16 @@ margin: 0px;
 .header{
   display: grid;
   grid-area: header;
-  background-color: rgb(94, 94, 138);
+  background-image: url(https://www.amazingczechia.com/wp-content/uploads/2017/05/prague-castle-panorama.jpg);
+  background-size: cover;
 }
 
 .main{
   display: grid;
   grid-area: main;
-  background-color: rgb(159, 159, 159);
+  background-image: url(https://img95.lovepik.com/photo/40107/7442.gif_wh300.gif);
+  background-size: cover;
+
 }
 
 /* END OF STRUCTURE */
@@ -52,8 +55,10 @@ margin: 0px;
 justify-self: center;
 align-self: center;
 font-family: 'Gajraj One', cursive;
-font-size: 70px;
-color: rgb(155, 214, 238);
+font-size: 60px;
+color: rgb(46, 51, 53);
+margin-left: 12em;
+margin-bottom: 2em;
 }
 
 .menu{
@@ -66,31 +71,6 @@ color: rgb(155, 214, 238);
   align-items: center;
 }
 
-.btn{
-  text-decoration: none;
-  margin-left: 2em;
-  height: 3em;
-
-  background-color: #848484;
-  border: none;
-  color: white;
- 
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 3em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
-
-.btn:hover{
-  background-color: #555555;
-}
 
 /* END OF GENERAL STYLING */
 
@@ -98,7 +78,7 @@ color: rgb(155, 214, 238);
 .formContainer{
   height: 40em;
   width: 60em;
-  background-color: rgb(124, 134, 165);
+  background-color: rgb(124, 134, 165, 0.9);
   justify-self: center;
   display: grid;
 }
@@ -151,3 +131,62 @@ align-self: center;
 font-weight: 900;
 }
 /* END OF PARK WEBSITE STYLES */
+
+
+/* .btn{
+  text-decoration: none;
+  margin-left: 2em;
+  height: 3em;
+
+  background-color: #848484;
+  border: none;
+  color: white;
+ 
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover{
+  background-color: #555555;
+} */
+
+button {
+  --width: 250px;
+  --timing: 2s;
+  border: 0;
+  width: var(--width);
+  padding-block: 1em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  background: rgb(156, 207, 255, 0.7);
+  transition: all 0.2s;
+  border-radius: 3px;
+  margin-left: 2em;
+}
+
+button:hover {
+  background-image: linear-gradient(to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100%);
+  animation: var(--timing) linear dance6123 infinite;
+  transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+  to {
+    background-position: var(--width);
+  }
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
