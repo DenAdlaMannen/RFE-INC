@@ -21,10 +21,10 @@ include_once "classes/search-class.php";
 
 <div class="main">
   <div class="menu">
-  <a href="index.php" class="btn">HOME</a>
-  <a href="park.php" class="btn">PARK VEHICLE</a>
-  <a href="remove.php" class="btn">REMOVE VEHICLE</a>  
-  <a href="view.php" class="btn">VIEW ALL VEHICLES</a>
+  <button><a href="index.php">HOME</a></button>
+  <button><a href="park.php">PARK VEHICLE</a></button>
+  <button><a href="remove.php">REMOVE VEHICLE</a></button>  
+  <button><a href="view.php">VIEW ALL VEHICLES</a></button>
   </div>  
   <div class="formContainer">
     <h3 class="formHeader">Enter vehicle information</h3>
