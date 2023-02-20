@@ -33,8 +33,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-$query = 'SELECT RegNum, parkingspotid, vehicleinfoid, arrivaltime FROM VEHICLES;';
+$query = 'SELECT RegNum, parkingspotid, IF (VehicleInfoID = 1, "MC", "CAR") AS vehicleinfoid, arrivaltime FROM VEHICLES
+ORDER BY ParkingSpotID ASC;';
+
 $result = $conn->query($query);
+
+// $result = array_merge($emptySpots, $result);
+
 
 echo '<style>
 table, th, td {
@@ -49,14 +54,15 @@ table, th, td {
 </tr>
 </table>';
 
+
 if ($result != null)
 {
     foreach ($result as $info)
     {
     echo '<style>table, th, td {border: 1px solid black; min-width: 10rem;}</style>
     <table><th>'
-    .$info['RegNum'].'</th><th>'
     .$info['parkingspotid'].'</th><th>'
+    .$info['RegNum'].'</th><th>'
     .$info['vehicleinfoid'].'</th><th>'
     .$info['arrivaltime'].'</th></table>';
     } 

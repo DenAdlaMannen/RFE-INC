@@ -1,5 +1,6 @@
 <?php
 include_once 'Connection.php';
+include_once 'remove-class.php';
 
 // //OPEN CONNECTION TO DB
 // $conn = Connection::connection();
@@ -13,6 +14,20 @@ function emptyCarSpots(){
   $query = "select ParkingSpotID 
   from parkinglot
   where parkinglot.ParkingSpotID NOT IN (select ParkingSpotID from vehicles)";
+
+  $query = "SELECT p.parkingspotID,CASE VehicleInfoID
+  WHEN 1 THEN \"MC\"
+  WHEN 2 THEN \"CAR\"
+  ELSE 'EMPTY'
+  END AS vehicleInfoid, CASE RegNum
+  WHEN RegNum = NULL THEN \"EMPTY\"
+  ELSE RegNum
+  END AS RegNum, CASE ArrivalTime
+  WHEN NULL THEN \"EMPTY\"
+  ELSE ArrivalTime
+  END 
+  from Vehicles v
+  right join parkinglot p on P.ParkingspotID = v.parkingspotID;";
 
   //RUN THE QUERY
   $runQuery = mysqli_query($functionConn, $query);
@@ -117,7 +132,7 @@ function doubleMcSpots(){
 //  echo $value;
 // }
 
-
+// EVERYTHING THAT RUNS IS BELOW
 
 if(isset($_POST["regNum"]) && isset($_POST["type"])) 
 {
@@ -131,8 +146,12 @@ if(isset($_POST["regNum"]) && isset($_POST["type"]))
     $regNum = $_POST["regNum"];
     $type = $_POST["type"];
 
-    //CHECK TYPE, IF MC OR CAR AND THAT THERE IS SPACE LEFT ON THE PARKINGLOT
-    if($type == 2 && emptyCarSpots() > 0)
+    if (in_array($regNum, getAllRegNums())) {
+     echo '<script>alert("This vehicle: '.$regNum. ' is already parked. ")</script>';
+    }
+    else
+    {
+      if($type == 2 && emptyCarSpots() > 0)
     {
       $emptySpots = emptyCarSpots(); //GET THE FIRST VALUE OF THE ARRAY AS PARKINGSPOT FOR CAR
       //$date = date("Y-m-d h:i:sa");  //// FOR OOP, IS THIS NECESSARY? 
@@ -169,6 +188,10 @@ if(isset($_POST["regNum"]) && isset($_POST["type"]))
       //header("Location: ../park.php");
       echo '<script>alert("The parkinglot is full.")</script>';
     }
+    }
+
+    //CHECK TYPE, IF MC OR CAR AND THAT THERE IS SPACE LEFT ON THE PARKINGLOT
+    
   }
 }
 
