@@ -71,12 +71,12 @@ include_once 'classes/vehicle-class.php';
                             {
                                 switch ($vehicleType)
                                 {
-                                    case 1: echo "MC $regNum  Arrived: $arrivalTime.
+                                    case 1: echo "<br>MC $regNum  Arrived: $arrivalTime.
                                     <br> Total cost is $totalCost Kr.
                                     <br> Thank you for your visit!";
                                     break;
 
-                                    case 2: echo "Car $regNum  Arrived: $arrivalTime.
+                                    case 2: echo "<br>Car $regNum  Arrived: $arrivalTime.
                                     <br> Total cost is $totalCost Kr.
                                     <br> Thank you for your visit!";
                                 }
