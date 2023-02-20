@@ -15,20 +15,6 @@ function emptyCarSpots(){
   from parkinglot
   where parkinglot.ParkingSpotID NOT IN (select ParkingSpotID from vehicles)";
 
-  $query = "SELECT p.parkingspotID,CASE VehicleInfoID
-  WHEN 1 THEN \"MC\"
-  WHEN 2 THEN \"CAR\"
-  ELSE 'EMPTY'
-  END AS vehicleInfoid, CASE RegNum
-  WHEN RegNum = NULL THEN \"EMPTY\"
-  ELSE RegNum
-  END AS RegNum, CASE ArrivalTime
-  WHEN NULL THEN \"EMPTY\"
-  ELSE ArrivalTime
-  END 
-  from Vehicles v
-  right join parkinglot p on P.ParkingspotID = v.parkingspotID;";
-
   //RUN THE QUERY
   $runQuery = mysqli_query($functionConn, $query);
 
