@@ -47,8 +47,8 @@ table, th, td {
  }</style>
  <table>
 <tr>
-   <th>Registration Number</th>
    <th>Parkingspot</th>
+   <th>Registration Number</th>
    <th>Vehicle Type</th>
    <th>Arrival Time</th>
 </tr>
