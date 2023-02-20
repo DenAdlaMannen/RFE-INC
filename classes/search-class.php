@@ -3,24 +3,32 @@ include_once 'Connection.php';
 $conn = Connection::connection();
 //searchvehicles();
 
-function searchvehicles(){
+function searchvehicles($regNum){
     // OPEN NEW CONNECTION
-$functionconn = Connection::connection();
-//SETTING THE SEARCH UP
-$submit = $_POST['RegNum'];
+$functionConn = Connection::connection();
 // IF EMPTY RETURN FAIL!
-if (empty($submit)){
+if (empty($regNum)){
     echo "That is not a valid registration number";
 }
 else{
-//QUERY FOR SEARCHING THE DB
-$sql = "SELECT RegNum, parkingspotid, arrivaltime FROM vehicles WHERE RegNum='$submit'";
-$result = $functionconn->query($sql);
+//PREPARING THE QUERY
+$query = "SELECT RegNum, parkingspotid, arrivaltime FROM vehicles WHERE RegNum=?";   
+$stmt = $functionConn->prepare($query);
+//INSERT VARIBLES
+$stmt->bind_param('s', $regNum);
+//EXECUTE
+$stmt->execute();
+//GET THE RESULT
+$result = $stmt->get_result();
 $row = $result->fetch_assoc();
 //CLOSING CONNECTION
-$functionconn->close();
-    echo "The vehicle with registration number " . $row['RegNum'] . "<br> is parked at parkingspot " .$row['parkingspotid'] . "<br> and arrived at " . $row['arrivaltime'];  
-return $row; 
+$functionConn->close();
+if($row == 0){
+echo "No vehicle with that registration number on this parkinglot.";
+}
+else{
+echo "The vehicle with registration number: " . $row['RegNum'] . "<br> is parked at parkingspot: " .$row['parkingspotid'] . "<br> and arrived at: " . $row['arrivaltime'];   
+}
 }
 }
 ?>

@@ -35,8 +35,10 @@ include_once "classes/search-class.php";
       <input type="submit" name="submit" value="Submit" class="park">
     </form>
     <?php 
-    if (isset($_POST['submit'])){  
-    searchvehicles(); 
+    if (isset($_POST['submit'])){
+      $regNum = $_POST['RegNum'];
+
+    searchvehicles($regNum); 
     }
     ?>
   </div>
