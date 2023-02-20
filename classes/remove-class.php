@@ -32,11 +32,14 @@ function removeVehicle($regNum){
     $functionConn = Connection::connection();
 
     //QUERY TO RUN
-    $query = "SELECT RegNum FROM vehicles";
+    $query = $functionConn->prepare("DELETE FROM vehicles WHERE regnum = ? ");
+    $query->bind_param("s", $regNum);
+    $query->execute();
 
-    //RUN THE QUERY
-    $exec = $functionConn->query($query);
-
+    if ($query)
+    {
+        return true;
+    }
 
 }
 
@@ -95,7 +98,7 @@ function calculateCost($vehicleCost, $arrivalTime){
         $diffInHours += ($diffInDays * 24);
     }
     
-    $totalCost = $vehicleCost * $diffInHours;
+    $totalCost = $vehicleCost * ($diffInHours + 1);
     
     return $totalCost;
 

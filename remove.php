@@ -66,13 +66,21 @@ include_once 'classes/vehicle-class.php';
                             // CALCULATES PRICE OF PARKING BY DIFF ARRIVALTIME AND A DATETIME NOW.
                             $totalCost = calculateCost($vehicleCost, $arrivalTime);
 
-                    
-                            //FUNKAR 
+                            // REMOVES THE VEHICLE FROM THE DATABASE AND CREATES RECEIPT.
+                            if(removeVehicle($regNum))
+                            {
+                                switch ($vehicleType)
+                                {
+                                    case 1: echo "MC $regNum  Arrived: $arrivalTime.
+                                    <br> Total cost is $totalCost Kr.
+                                    <br> Thank you for your visit!";
+                                    break;
 
-                            // echo'<br>';
-                            // echo $regNum;
-
-
+                                    case 2: echo "Car $regNum  Arrived: $arrivalTime.
+                                    <br> Total cost is $totalCost Kr.
+                                    <br> Thank you for your visit!";
+                                }
+                            }
 
                         }
                         
